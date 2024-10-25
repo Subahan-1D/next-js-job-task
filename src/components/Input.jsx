@@ -1,13 +1,26 @@
 "use client";
 
 const Input = () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const name = e.target.name.value;
+    const title = e.target.title.value;
+    console.log(name, title);
+   e.target.reset();
 
-    const handleSubmit = (e) =>{
-        e.preventDefault()
-        const name = e.target.name.value ;
-        const title = e.target.title.value;
-        console.log(name , title)
+    try {
+      const response = await fetch("/api/book/new", {
+        method: "POST",
+        body: JSON.stringify({ name, title }),
+      });
+      if (response === ok) {
+        alert("done property");
+         
+      }
+    } catch (error) {
+      console.log(error.message);
     }
+  };
   return (
     <div>
       <h2>Post page or mongodb</h2>
@@ -33,12 +46,12 @@ const Input = () => {
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Book Title</span>
+                  <span className="label-text">Book Topic</span>
                 </label>
                 <input
                   type="text"
                   name="title"
-                  placeholder="book title"
+                  placeholder="book topic"
                   className="input input-bordered"
                   required
                 />

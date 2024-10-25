@@ -3,11 +3,11 @@ import React from "react";
 
 const Header = () => {
     const navLinks = (
-      <>
+      <div className="flex justify-center items-center">
         <li className="text-2xl">
-         <Link href={'/home'}>Home</Link>
+         <Link href={'/information'}> Book Information</Link>
         </li>
-      </>
+      </div>
     );
   return (
     <div>

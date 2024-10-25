@@ -1,10 +1,11 @@
-import Home from '@/components/Home';
+import Info from '@/components/Info';
 import React from 'react';
+import FetchPage from '../show/page';
 
 const page = () => {
     return (
         <div>
-            <Home></Home>
+            <FetchPage></FetchPage>
         </div>
     );
 };
