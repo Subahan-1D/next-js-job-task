@@ -1,8 +1,9 @@
+import Input from "@/components/Input";
 import Image from "next/image";
 export default function Home() {
   return (
-    <div>
-      <h3>New Hero</h3>
+    <div className="text-center">
+      <Input></Input>
     </div>
   );
 }
