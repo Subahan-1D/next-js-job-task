@@ -23,8 +23,6 @@ const Input = () => {
   };
   return (
     <div>
-      <h2>Post page or mongodb</h2>
-
       <div className="hero bg-base-200 min-h-screen">
         <div className="hero-content flex-col">
           <div className="text-center ">

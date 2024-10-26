@@ -1,8 +1,11 @@
 'use client'
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 
 const Header = () => {
+  const session = useSession() ;
+  console.log(session)
     const navLinks = (
       <>
         <li className="text-xl">
@@ -46,7 +49,7 @@ const Header = () => {
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
-          <a className="btn">Login</a>
+          <Link href={'/login'} className="btn">Login</Link>
         </div>
       </div>
     </div>
