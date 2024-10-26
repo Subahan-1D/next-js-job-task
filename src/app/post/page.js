@@ -1,11 +1,10 @@
-
+import Input from '@/components/Input';
 import React from 'react';
-import FetchPage from '../show/page';
 
 const page = () => {
     return (
         <div>
-            <FetchPage></FetchPage>
+            <Input></Input>
         </div>
     );
 };

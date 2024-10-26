@@ -1,13 +1,17 @@
+'use client'
 import Link from "next/link";
 import React from "react";
 
 const Header = () => {
     const navLinks = (
-      <div className="flex justify-center items-center">
-        <li className="text-2xl">
-         <Link href={'/information'}> Book Information</Link>
+      <>
+        <li className="text-xl">
+          <Link href={"/post"}> Add Post</Link>
         </li>
-      </div>
+        <li className="text-xl">
+          <Link href={"/update"}> Update Post</Link>
+        </li>
+      </>
     );
   return (
     <div>
@@ -37,7 +41,7 @@ const Header = () => {
               {navLinks}
             </ul>
           </div>
-          <Link href='/' className="btn  text-xl">
+          <Link href="/" className="btn  text-xl">
             <span className="text-red-600">CRUD</span> OPERATION
           </Link>
         </div>

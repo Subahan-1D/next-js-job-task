@@ -1,11 +1,10 @@
-
+import Update from '@/components/Update';
 import React from 'react';
-import FetchPage from '../show/page';
 
 const page = () => {
     return (
         <div>
-            <FetchPage></FetchPage>
+            <Update></Update>
         </div>
     );
 };

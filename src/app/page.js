@@ -1,9 +1,10 @@
-import Input from "@/components/Input";
-import Image from "next/image";
+
+import FetchPage from "./show/page";
+
 export default function Home() {
   return (
     <div className="text-center">
-      <Input></Input>
+      <FetchPage></FetchPage>
     </div>
   );
 }
