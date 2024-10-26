@@ -46,6 +46,7 @@ const FetchPage = () => {
         })
         if(response?.ok){
           alert("Update Successfully")
+          fetchBook();
         }
 
     }
@@ -57,7 +58,7 @@ const FetchPage = () => {
   }
   return (
     <div>
-      <h3 className="text-center text-red-700">Book Data : {books.length}</h3>
+      <h3 className="text-center text-red-700">Your Data : {books.length}</h3>
       <div className="grid sm:grid-cols-1 md:gird-cols-2 lg:grid-cols-3 gap-4 container mx-auto">
         {books.map((book) => (
           <Info

@@ -34,24 +34,24 @@ const Input = () => {
             <form onSubmit={handleSubmit} className="card-body">
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Book Name</span>
+                  <span className="label-text">Name</span>
                 </label>
                 <input
                   type="text"
                   name="name"
-                  placeholder="book name"
+                  placeholder=" Name"
                   className="input input-bordered"
                   required
                 />
               </div>
               <div className="form-control">
                 <label className="label">
-                  <span className="label-text">Book Topic</span>
+                  <span className="label-text">Position</span>
                 </label>
                 <input
                   type="text"
                   name="title"
-                  placeholder="book topic"
+                  placeholder="position"
                   className="input input-bordered"
                   required
                 />

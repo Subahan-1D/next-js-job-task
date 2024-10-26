@@ -8,9 +8,6 @@ const Header = () => {
         <li className="text-xl">
           <Link href={"/post"}> Add Post</Link>
         </li>
-        <li className="text-xl">
-          <Link href={"/update"}> Update Post</Link>
-        </li>
       </>
     );
   return (
