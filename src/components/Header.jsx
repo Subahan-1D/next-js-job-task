@@ -1,12 +1,9 @@
 'use client'
-import { useSession } from "next-auth/react";
 import Link from "next/link";
 ;
 import React from "react";
 
 const Header = () => {
-  const session = useSession() ;
-  console.log(session)
     const navLinks = (
       <>
         <li className="text-xl">
