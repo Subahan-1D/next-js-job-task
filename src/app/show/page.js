@@ -6,7 +6,9 @@ import { useEffect, useState } from "react";
 const FetchPage = () => {
   const [books, setBooks] = useState([]);
   const fetchBook = async () => {
-    const response = await fetch(`${process.env.API}/api/book`);
+    const response = await fetch(
+      `https://next-js-job-task.vercel.app/api/book`
+    );
     const data = await response.json();
     setBooks(data);
   };
@@ -20,9 +22,12 @@ const FetchPage = () => {
     const confirmed = confirm("Are you sure to delete this data !");
     if (confirmed) {
       try {
-        await fetch(`${process.env.API}/api/book/${book._id.toString()}`, {
-          method: "DELETE",
-        });
+        await fetch(
+          `https://next-js-job-task.vercel.app/api/book/${book._id.toString()}`,
+          {
+            method: "DELETE",
+          }
+        );
 
         const remaining = books.filter((item) => item._id != book._id);
         setBooks(remaining);
@@ -37,13 +42,16 @@ const FetchPage = () => {
     const updateData = confirm("Are you sure update data")
    if(updateData){
     try{
-       const response = await fetch(`${process.env.API}/api/book/${book._id}`, {
-         method: "PATCH",
-         body: JSON.stringify({
-           name: newBookName,
-           title: newBookTitle,
-         }),
-       });
+       const response = await fetch(
+         `https://next-js-job-task.vercel.app/api/book/${book._id}`,
+         {
+           method: "PATCH",
+           body: JSON.stringify({
+             name: newBookName,
+             title: newBookTitle,
+           }),
+         }
+       );
         if(response?.ok){
           alert("Update Successfully")
           fetchBook();
