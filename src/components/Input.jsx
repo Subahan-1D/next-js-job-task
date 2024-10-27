@@ -1,6 +1,7 @@
 "use client";
 
 const Input = () => {
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
   const handleSubmit = async (e) => {
     e.preventDefault();
     const name = e.target.name.value;
@@ -9,7 +10,7 @@ const Input = () => {
    e.target.reset();
 
     try {
-      const response = await fetch("/api/book/new", {
+      const response = await fetch(`${baseUrl}/api/book/new`, {
         method: "POST",
         body: JSON.stringify({ name, title }),
       });
