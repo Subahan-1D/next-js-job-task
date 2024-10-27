@@ -1,6 +1,7 @@
 'use client'
 import { useSession } from "next-auth/react";
 import Link from "next/link";
+;
 import React from "react";
 
 const Header = () => {
@@ -13,6 +14,8 @@ const Header = () => {
         </li>
       </>
     );
+
+ 
   return (
     <div>
       <div className="navbar bg-base-100">
@@ -49,7 +52,7 @@ const Header = () => {
           <ul className="menu menu-horizontal px-1">{navLinks}</ul>
         </div>
         <div className="navbar-end">
-          <Link href={'/login'} className="btn">Login</Link>
+          <button className="btn">Login</button>
         </div>
       </div>
     </div>

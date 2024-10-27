@@ -9,16 +9,17 @@ const RegisterFrom = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     console.log(name, email, password);
+    e.target.reset();
 
     try {
-      const response = await fetch("/api/register/new",{
+      const response = await fetch(`/api/register/new`, {
         method: "POST",
-        body: JSON.stringify({ name, email , password }),
+        body: JSON.stringify({ name, email, password }),
       });
       if (response.ok) {
-        console.log("Registration successful!");
         alert("Register Successfully");
-      } else {
+      }
+       else {
         console.log("Registration failed!");
       }
     } catch (error) {
