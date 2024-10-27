@@ -7,7 +7,7 @@ const FetchPage = () => {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
   const [books, setBooks] = useState([]);
   const fetchBook = async () => {
-    const response = await fetch(`/${baseUrl}/api/book`);
+    const response = await fetch(`${baseUrl}/api/book`);
     const data = await response.json();
     setBooks(data);
   };
@@ -21,7 +21,7 @@ const FetchPage = () => {
     const confirmed = confirm("Are you sure to delete this data !");
     if (confirmed) {
       try {
-        await fetch(`/${baseUrl}/api/book/${book._id.toString()}`, {
+        await fetch(`${baseUrl}/api/book/${book._id.toString()}`, {
           method: "DELETE",
         });
 
@@ -38,7 +38,7 @@ const FetchPage = () => {
     const updateData = confirm("Are you sure update data")
    if(updateData){
     try{
-       const response = await fetch(`/${baseUrl}/api/book${book._id}`,{
+       const response = await fetch(`${baseUrl}/api/book${book._id}`,{
           method:"PATCH",
           body:JSON.stringify({
             name: newBookName,
