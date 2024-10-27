@@ -6,9 +6,7 @@ import { useEffect, useState } from "react";
 const FetchPage = () => {
   const [books, setBooks] = useState([]);
   const fetchBook = async () => {
-    const response = await fetch(
-      `https://next-js-job-task.vercel.app/api/book`
-    );
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API}/api/book`);
     const data = await response.json();
     setBooks(data);
   };
@@ -23,7 +21,7 @@ const FetchPage = () => {
     if (confirmed) {
       try {
         await fetch(
-          `https://next-js-job-task.vercel.app/api/book/${book._id.toString()}`,
+          `${process.env.NEXT_PUBLIC_API}/api/book/${book._id.toString()}`,
           {
             method: "DELETE",
           }
@@ -43,7 +41,7 @@ const FetchPage = () => {
    if(updateData){
     try{
        const response = await fetch(
-         `https://next-js-job-task.vercel.app/api/book/${book._id}`,
+         `${process.env.NEXT_PUBLIC_API}/api/book/${book._id}`,
          {
            method: "PATCH",
            body: JSON.stringify({

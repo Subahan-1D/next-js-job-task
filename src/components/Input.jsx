@@ -6,11 +6,11 @@ const Input = () => {
     const name = e.target.name.value;
     const title = e.target.title.value;
     console.log(name, title);
-    e.target.reset();
+   e.target.reset();
 
     try {
       const response = await fetch(
-        `https://next-js-job-task.vercel.app/book/new`,
+        `${process.env.NEXT_PUBLIC_API}/api/book/new`,
         {
           method: "POST",
           body: JSON.stringify({ name, title }),
@@ -18,6 +18,7 @@ const Input = () => {
       );
       if (response === ok) {
         alert("done property");
+         
       }
     } catch (error) {
       console.log(error.message);
