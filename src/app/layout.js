@@ -3,7 +3,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 import { Roboto } from "next/font/google";
-import AuthProvider from "@/components/Provider/AuthProvider";
 
 const roboto = Roboto({
   weight: "400",
@@ -20,11 +19,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <AuthProvider>
           <Header></Header>
           <div className="min-h-screen mx-auto">{children}</div>
           <Footer></Footer>
-        </AuthProvider>
+
       </body>
     </html>
   );
