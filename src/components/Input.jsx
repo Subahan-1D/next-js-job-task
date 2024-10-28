@@ -10,7 +10,7 @@ const Input = () => {
 
     try {
       const response = await fetch(
-        `https://next-js-job-task.vercel.app/api/book/new`,
+        "/api/book/new",
         {
           method: "POST",
           body: JSON.stringify({ name, title }),
